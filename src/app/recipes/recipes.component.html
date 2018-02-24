@@ -1,0 +1,11 @@
+<div class="col-xs-12"  style="padding-top:10px">
+  <div class="row">
+    <div class="col-xs-12 col-md-5">
+      <app-recipe-list (recipeIsSelected1)="selectedRec = $event"></app-recipe-list>
+    </div>
+    <div class="col-xs-12 col-md-7">
+      <app-recipe-detail *ngIf="selectedRec; else naText" [recipe] ="selectedRec"></app-recipe-detail>
+      <ng-template #naText>Please Select A Recipe</ng-template>
+    </div>
+  </div>
+</div>

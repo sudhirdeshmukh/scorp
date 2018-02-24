@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  navigateToPage:string = 'recipe'
+
+  navigateTo(feature: string){
+    this.navigateToPage = feature;
+  }
 }
