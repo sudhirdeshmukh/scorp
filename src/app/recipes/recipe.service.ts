@@ -1,5 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Recipe } from './recipe.model';
+import { Ingredient } from '../shared/ingredient.model';
+import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
 @Injectable()
 export class RecipeService {
@@ -7,14 +9,31 @@ export class RecipeService {
   public recipeSelected = new EventEmitter<Recipe>();
 
   private recipes: Recipe[] = [
-    new Recipe('Test Recipe', 'Rec Description', 'https://www.ndtv.com/cooks/images/gulab%20jamun%20new.jpg?downsize=650:400&output-quality=70&output-format=webp')
-    , new Recipe('Another Test Recipe', 'Another Rec Description', 'https://www.ndtv.com/cooks/images/gulab%20jamun%20new.jpg?downsize=650:400&output-quality=70&output-format=webp')
+    new Recipe('Test Recipe',
+            'Rec Description',
+            'https://www.ndtv.com/cooks/images/gulab%20jamun%20new.jpg?downsize=650:400&output-quality=70&output-format=webp',
+            [
+              new Ingredient('ABC',3),
+              new Ingredient('DEF', 5)
+            ]),
+    new Recipe('Another Test Recipe',
+            'Another Rec Description',
+            'https://www.ndtv.com/cooks/images/gulab%20jamun%20new.jpg?downsize=650:400&output-quality=70&output-format=webp',
+            [
+              new Ingredient('ABC',3),
+              new Ingredient('DEF', 5),
+              new Ingredient('JKL',3),
+              new Ingredient('LMN', 5)
+            ])
   ];
 
-  constructor() { }
+  constructor( private slService: ShoppingListService ) { }
 
   getRecipes(){
     return this.recipes.slice();
   }
 
+  addIngredientsToShoppingList( ingredients: Ingredient[] ){
+    this.slService.addIngredients( ingredients );
+  }
 }
