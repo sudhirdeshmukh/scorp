@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Recipe } from './../recipe.model';
 import { RecipeService } from './../recipe.service';
 
@@ -8,7 +8,7 @@ import { RecipeService } from './../recipe.service';
   styleUrls: ['./recipe-list.component.scss']
 })
 export class RecipeListComponent implements OnInit {
-  @Output() recipeIsSelected1 = new EventEmitter<Recipe>()
+  // @Output() recipeIsSelected1 = new EventEmitter<Recipe>()
 
   recipes: Recipe[];
 
@@ -18,8 +18,8 @@ export class RecipeListComponent implements OnInit {
     this.recipes = this.recipeService.getRecipes();
   }
 
-  selectedRecipe(recipe:Recipe){
-    this.recipeIsSelected1.emit(recipe);
-  }
+  // selectedRecipe(recipe:Recipe){
+  //   this.recipeIsSelected1.emit(recipe);
+  // }
 
 }

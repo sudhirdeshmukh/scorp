@@ -2,6 +2,7 @@
   <button class="btn btn-success">New Recipe</button>
   <hr>
   <div class="list-group">
-    <app-recipe-item *ngFor="let rec of recipes; let i = index" [recipe]="rec" (recipeIsSelected)="selectedRecipe(rec)"></app-recipe-item>
+    <!-- <app-recipe-item *ngFor="let rec of recipes; let i = index" [recipe]="rec" (recipeIsSelected)="selectedRecipe(rec)"></app-recipe-item> -->
+    <app-recipe-item *ngFor="let rec of recipes; let i = index" [recipe]="rec" ></app-recipe-item>
   </div>
 </div>

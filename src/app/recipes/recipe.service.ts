@@ -1,8 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Recipe } from './recipe.model';
 
 @Injectable()
 export class RecipeService {
+
+  public recipeSelected = new EventEmitter<Recipe>();
 
   private recipes: Recipe[] = [
     new Recipe('Test Recipe', 'Rec Description', 'https://www.ndtv.com/cooks/images/gulab%20jamun%20new.jpg?downsize=650:400&output-quality=70&output-format=webp')
