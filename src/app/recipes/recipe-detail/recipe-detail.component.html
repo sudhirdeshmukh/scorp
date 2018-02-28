@@ -5,10 +5,10 @@
         <h4 class="card-title" appHighlight>{{recipe.name}}</h4>
         <div class="btn-group">
           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" >Manage Recipe <span class="caret"></span></button>
-          <ul class="dropdown-menu">
-              <li class="dropdown-item"><a (click)="addIngredientsToShoppingList()" style="cursor: pointer">To shopping list</a></li>
-              <li class="dropdown-item"><a href="#">Edit</a></li>
-              <li class="dropdown-item"><a href="#">Delete</a></li>
+          <ul class="dropdown-menu" style="cursor: pointer">
+              <li class="dropdown-item"><a (click)="addIngredientsToShoppingList()">To shopping list</a></li>
+              <li class="dropdown-item"><a (click)="onEditClicked()">Edit</a></li>
+              <li class="dropdown-item"><a >Delete</a></li>
           </ul>
         </div>
         <p>

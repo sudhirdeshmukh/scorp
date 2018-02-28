@@ -5,8 +5,7 @@
       <app-recipe-list></app-recipe-list>
     </div>
     <div class="col-xs-12 col-md-7">
-      <app-recipe-detail *ngIf="selectedRec; else naText" [recipe] ="selectedRec"></app-recipe-detail>
-      <ng-template #naText>Please Select A Recipe</ng-template>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
