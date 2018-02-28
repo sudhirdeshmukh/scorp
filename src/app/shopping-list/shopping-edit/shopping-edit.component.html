@@ -1,4 +1,4 @@
-<form>
+<form (ngSubmit)="addItem(f)" #f="ngForm">
   <div class="col-xs-12">
     <div class="row">
           <div class="col-md-6 col-xs-12 form-group">
@@ -6,7 +6,9 @@
               <input type="text"
                 name="name"
                 id="name"
-                class="form-control" #name>
+                class="form-control"
+                ngModel
+                >
           </div>
           <div class="col-md-6 col-xs-12 form-group">
               <label for="name">Amount</label>
@@ -14,13 +16,13 @@
                 name="amt"
                 id="amt"
                 class="form-control"
-                #amt>
+                ngModel>
           </div>
     </div>
   </div>
   <div class="col-xs-12">
       <div class="form-group">
-        <button class="btn btn-success" type="submit" (click)="addItem()">Add</button>
+        <button class="btn btn-success" type="submit">Add</button>
         <button class="btn btn-danger" type="button">Delete</button>
         <button class="btn btn-primary" type="reset">Clear</button>
       </div>
